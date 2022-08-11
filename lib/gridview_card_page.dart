@@ -7,8 +7,11 @@ class GridViewCrad extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        padding: EdgeInsets.all(8),
         child: GridView.count(
           crossAxisCount: 3,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 20,
           //children: List.generate(9, (index) => Card()),
           children: List.generate(9,(index){
             return Card(
@@ -18,6 +21,19 @@ class GridViewCrad extends StatelessWidget{
                 borderRadius: BorderRadius.all(
                  Radius.circular(20) 
                 )
+              ),
+              child: InkWell(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20)
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Icon(Icons.person,size: 65,color: Colors.white,),
+                    Text("Menu 1",style: TextStyle(color: Colors.white))
+                  ],
+                ),
+                onTap: (){},
               ),
             );
           }),
